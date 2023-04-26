@@ -17,6 +17,7 @@ router.post("/register", async (req, res) => {
             password: hashedPassword
         });
         //save user and respond
+
         const user = await newUser.save()
         res.status(200).json(user);
     } catch (err) {
@@ -25,7 +26,7 @@ router.post("/register", async (req, res) => {
 })  
     //LOGIN 
 router.post("/login", async (req, res) => {
-    console.log("control comes here.");
+    console.log("control comes here."); 
     try {
         const user = await User.findOne({ email: req.body.email });
         !user && res.status(404).send("User not found.");
@@ -34,7 +35,6 @@ router.post("/login", async (req, res) => {
         !validPassword && res.status(400).send("Wrong Password");
 
         res.status(200).json(user);
-
     }
     catch (err) {
         res.status(500).json(err);
