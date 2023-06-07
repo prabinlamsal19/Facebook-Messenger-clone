@@ -24,7 +24,7 @@ router.post("/register", async (req, res) => {
         res.status(500).json(err);
     }
 })  
-    //LOGIN 
+    LOGIN 
 router.post("/login", async (req, res) => {
     console.log("control comes here."); 
     try {
@@ -40,5 +40,4 @@ router.post("/login", async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-module.exports = router;
+        

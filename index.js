@@ -6,6 +6,7 @@ const helmet = require("helmet");
 const morgan= require("morgan");
 const userRoute=require("./routes/users");
 const authRoute=require("./routes/auth");
+const cors = require("cors");
 // const postRoute = require("./routes/posts");
 
 
@@ -20,6 +21,7 @@ mongoose.connect(
 
 
 //middleware
+app.use(cors());
 app.use(express.json());
 app.use(helmet());
 // app.use(morgan('combined'));
